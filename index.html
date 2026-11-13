@@ -10,18 +10,22 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="mechanisms.css">
+  <link rel="preload" href="assets/button-hover.webp" as="image">
+  <link rel="preload" href="assets/button-pressed.webp" as="image">
+  <link rel="icon" href="assets/logo-skull.webp" type="image/webp">
   <script src="app.js" defer></script>
 </head>
 <body>
   <div class="site-shell">
     <header class="site-header">
-      <a class="wordmark" href="#" aria-label="Vessel home">V<span class="wordmark-inner">ESSE</span>L<span class="wordmark-cross">✦</span></a>
+      <a class="wordmark" href="#" aria-label="Vessel home">V<span class="wordmark-inner">ESSE</span>L<img class="brand-skull" src="assets/logo-skull.webp" alt=""></a>
       <nav aria-label="Main navigation">
         <a class="nav-link active" href="#lab">The laboratory</a>
         <a class="nav-link" href="#components">Components</a>
         <button class="nav-link" id="notes-button">Field notes <span>↗</span></button>
       </nav>
-      <button class="sound-control" id="sound-button" aria-pressed="false" aria-label="Enable ambient sound"><span class="sound-bars" aria-hidden="true">ıııı</span><span id="sound-label">Sound off</span></button>
+      <button class="sound-control" id="sound-button" aria-pressed="false" aria-label="Enable ambient sound"><img class="sound-emitter" src="assets/sound-icon.webp" alt=""><span id="sound-label">Sound off</span></button>
     </header>
 
     <main>
@@ -37,7 +41,7 @@
           <div class="section-label"><span>01</span> COMMAND SURFACES</div>
           <p class="panel-intro">Every action leaves an impression.</p>
           <div class="command-list">
-            <button class="artifact-button primary" id="awaken-button"><span>Awaken vessel</span><span class="button-mark" aria-hidden="true">✧</span></button>
+            <button class="artifact-button primary" id="awaken-button" aria-pressed="false"><span>Awaken vessel</span><span class="button-mark" aria-hidden="true">✧</span></button>
             <div class="control-caption">PRIMARY / ACTIVATION</div>
             <button class="artifact-button secondary" id="signal-button"><span>Send a signal</span><span class="button-mark" aria-hidden="true">↗</span></button>
             <div class="control-caption">SECONDARY / TRANSMISSION</div>
@@ -46,19 +50,19 @@
             <button class="artifact-button" disabled><span>Dormant</span><span class="button-mark" aria-hidden="true">·</span></button>
             <div class="control-caption">DISABLED / IN STASIS</div>
           </div>
-          <div class="bank-footnote"><span>↳</span><p>Forged in shadow.<br>Responsive to touch.</p></div>
+          <div class="bank-footnote"><span>↳</span><p>Press and hold.<br>Feel the surface respond.</p></div>
         </aside>
 
         <div class="specimen-column">
           <div class="specimen-viewer" id="specimen-viewer" data-material="bone">
-            <div class="scene-window"><img id="scene-image" src="assets/scene.png" alt="A colossal alien skull fused with the ribbed architecture of a misty biomechanical cathedral" fetchpriority="high"><div class="scene-shade"></div><div class="scan-line" aria-hidden="true"></div></div>
+            <div class="scene-window"><img id="scene-image" src="assets/scene.webp" alt="A colossal alien skull fused with the ribbed architecture of a misty biomechanical cathedral" fetchpriority="high"><div class="scene-shade"></div><div class="scan-line" aria-hidden="true"></div></div>
             <div class="generated-frame" aria-hidden="true"></div>
-            <div class="viewer-top"><span id="specimen-id">SPECIMEN 001</span><button id="expand-button" aria-label="Expand specimen" title="Expand specimen">⤢</button></div>
+            <div class="viewer-top"><span id="specimen-id">SPECIMEN 001</span><button class="icon-socket" id="expand-button" aria-label="Expand specimen" title="Expand specimen">⤢</button></div>
             <div class="viewer-copy"><span class="eyebrow" id="specimen-type">ARCHITECTURAL ORGANISM</span><h2 id="specimen-name">The Cathedral</h2><p id="specimen-caption">A sanctuary with a pulse.</p></div>
             <div class="viewer-bottom"><span class="viewer-state"><i></i><span id="vessel-state">AWAITING CONTACT</span></span><span id="view-coordinates">X 048 · Y 092</span></div>
             <button class="hotspot" id="core-button" aria-label="Inspect the neural core" title="Inspect the neural core"><span>＋</span></button>
           </div>
-          <div class="specimen-navigation"><button id="prev-specimen" aria-label="Previous specimen">←</button><div role="tablist" aria-label="Specimen view"><button role="tab" aria-selected="true" data-specimen="0" id="specimen-tab-0" aria-controls="specimen-viewer">Cathedral</button><span>/</span><button role="tab" aria-selected="false" data-specimen="1" id="specimen-tab-1" aria-controls="specimen-viewer" tabindex="-1">Neural core</button><span>/</span><button role="tab" aria-selected="false" data-specimen="2" id="specimen-tab-2" aria-controls="specimen-viewer" tabindex="-1">Exoskeleton</button></div><button id="next-specimen" aria-label="Next specimen">→</button></div>
+          <div class="specimen-navigation"><button class="icon-socket" id="prev-specimen" aria-label="Previous specimen"><img class="reverse-arrow" src="assets/arrow-icon.webp" alt=""></button><div role="tablist" aria-label="Specimen view"><button role="tab" aria-selected="true" data-specimen="0" id="specimen-tab-0" aria-controls="specimen-viewer">Cathedral</button><button role="tab" aria-selected="false" data-specimen="1" id="specimen-tab-1" aria-controls="specimen-viewer" tabindex="-1">Neural core</button><button role="tab" aria-selected="false" data-specimen="2" id="specimen-tab-2" aria-controls="specimen-viewer" tabindex="-1">Exoskeleton</button></div><button class="icon-socket" id="next-specimen" aria-label="Next specimen"><img src="assets/arrow-icon.webp" alt=""></button></div>
         </div>
 
         <aside class="organism-controls">
@@ -77,9 +81,29 @@
       <section class="component-section" id="components" aria-labelledby="component-heading">
         <div class="section-divider"><span class="tiny-star">✧</span><div></div><h2 id="component-heading">The smaller organisms</h2><div></div><span class="tiny-star">✧</span></div>
         <div class="component-grid">
-          <article class="component-panel input-panel"><div class="section-label"><span>03</span> NEURAL INPUT</div><label class="input-label" for="specimen-search">Search the collection</label><div class="search-field"><span aria-hidden="true">⌕</span><input type="search" id="specimen-search" placeholder="Find a specimen…" autocomplete="off"><kbd>/</kbd></div><div class="search-results" id="search-results" aria-live="polite"></div><label class="input-label" for="chamber">Containment chamber</label><select id="chamber"><option value="a">Chamber A — Architecture</option><option value="b">Chamber B — Neural systems</option><option value="c">Chamber C — Exoskeletons</option></select><div class="field-note" id="chamber-note">Three specimens. One shared consciousness.</div></article>
+          <article class="component-panel input-panel"><div class="section-label"><span>03</span> NEURAL INPUT</div><label class="input-label" for="specimen-search">Search the collection</label><div class="search-field"><img class="search-lens" src="assets/search-icon.webp" alt=""><input type="search" id="specimen-search" placeholder="Find a specimen…" autocomplete="off"><kbd>/</kbd></div><div class="search-results" id="search-results" aria-live="polite"></div><label class="input-label" for="chamber">Containment chamber</label><select id="chamber"><option value="a">Chamber A — Architecture</option><option value="b">Chamber B — Neural systems</option><option value="c">Chamber C — Exoskeletons</option></select><div class="field-note" id="chamber-note">Three specimens. One shared consciousness.</div></article>
           <article class="component-panel"><div class="section-label"><span>04</span> SIGNAL FEED <span id="signal-count" class="count-label">01</span></div><div class="signal-notice"><span class="notice-symbol" aria-hidden="true">✧</span><div><h3 id="notice-heading">Connection established</h3><p id="notice-copy">The organism is aware of your presence.</p><span id="notice-time">JUST NOW</span></div></div><div class="connection-line"><span>NEURAL LINK</span><span><i></i> STABLE</span></div><button class="text-button" id="notification-button">Trigger a notification <span>↗</span></button></article>
           <article class="component-panel"><div class="section-label"><span>05</span> INNER WORKINGS</div><details open><summary>Material & form<span aria-hidden="true">＋</span></summary><p>Bone, chrome, and blackened metal. Each surface is an artifact; each control, an organism.</p></details><details><summary>Interaction & response<span aria-hidden="true">＋</span></summary><p>Wake the vessel, tune its resonance, or follow its neural scan. Every control changes the living specimen.</p></details><details><summary>Take a closer look<span aria-hidden="true">＋</span></summary><p>Open a specimen to inspect the full artwork, or download the original image from the viewer.</p></details></article>
+        </div>
+      </section>
+      <section class="mechanism-section" aria-labelledby="mechanism-heading">
+        <div class="section-divider"><span class="tiny-star">✧</span><div></div><h2 id="mechanism-heading">Nerves, reflexes & rituals</h2><div></div><span class="tiny-star">✧</span></div>
+        <div class="mechanism-grid">
+          <article class="mechanism-panel loader-panel" id="sequence-panel">
+            <div class="section-label"><span>06</span> LOADING ORGANISM</div>
+            <div class="loading-organism"><div class="loader-socket"><img class="loading-ring" id="loading-ring" src="assets/loader-ring.webp" alt=""><output id="sequence-percent">00<span>%</span></output></div><div class="sequence-copy"><h3 id="sequence-state">In suspended animation</h3><p id="sequence-description">Set the organism in motion.</p><div class="progress-channel"><progress id="sequence-progress" aria-label="Neural sequence progress" max="100" value="0"></progress></div><span class="micro-label">LOCAL NEURAL SEQUENCE</span></div></div>
+            <div class="sequence-actions"><button class="small-artifact" id="sequence-button">Initiate sequence</button><button class="text-button" id="cancel-sequence" disabled>Cancel</button></div>
+          </article>
+          <article class="mechanism-panel contact-panel">
+            <div class="section-label"><span>07</span> CONTACT RESPONSE</div>
+            <button class="contact-pad" id="contact-pad" aria-label="Test mechanical cursor and click response"><img class="contact-preview" src="assets/cursor-arrow.webp" alt=""><img class="contact-burst" src="assets/click-burst.webp" alt=""><span id="contact-state">Make contact</span><span class="micro-label" id="contact-count">PRESS · RELEASE · REPEAT</span></button>
+          </article>
+          <article class="mechanism-panel containment-panel">
+            <div class="section-label"><span>08</span> CONTAINMENT SEALS</div>
+            <label class="seal-row"><input type="checkbox" id="containment-seal" checked><span>Containment seal<small id="seal-state">CHAMBER SECURED</small></span></label>
+            <label class="seal-row"><input type="checkbox" id="auto-reconnect"><span>Auto-reconnect<small id="reconnect-state">MANUAL CONNECTION</small></span></label>
+            <label class="seal-row disabled-seal"><input type="checkbox" checked disabled><span>Emergency isolation<small>SEALED AT THE SOURCE</small></span></label>
+          </article>
         </div>
       </section>
       <section class="endnote"><span class="tiny-star">✦</span><p>Neither entirely human.<br><em>Nor entirely machine.</em></p><span class="tiny-star">✦</span></section>
@@ -88,6 +112,7 @@
   </div>
 
   <div id="toast" class="toast" role="status"><span aria-hidden="true">✧</span><div><strong id="toast-heading"></strong><p id="toast-copy"></p></div><button id="dismiss-toast" aria-label="Dismiss notification">×</button></div>
-  <dialog id="specimen-dialog" class="specimen-dialog"><button class="dialog-close" id="close-dialog" aria-label="Close dialog">×</button><div id="dialog-body"></div></dialog>
+  <dialog id="specimen-dialog" class="specimen-dialog" aria-label="Specimen inspection"><button class="dialog-close icon-socket" id="close-dialog" aria-label="Close dialog">×</button><div id="dialog-body"></div></dialog>
+  <div id="cursor-layer" aria-hidden="true"><img id="living-cursor" src="assets/cursor-arrow.webp" alt=""><img id="cursor-impact" src="assets/click-burst.webp" alt=""></div>
 </body>
 </html>
