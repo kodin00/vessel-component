@@ -6,7 +6,7 @@ Native HTML supplies labels, semantics, keyboard behavior and hit targets. Artwo
 
 ## Interaction behavior
 
-- Command buttons swap to a generated amber hover image, compress on pointer/keyboard press, and show a generated recessed pressed image. Release triggers a short nerve pulse. Activation keeps a warm selected state.
+- Command buttons keep the original generated outer frame fixed in every state. Generated amber hover and pressed artwork is clipped to the inner plate, excluding a stray highlight outside the pressed asset. Only the plate and label depress on pointer/keyboard press. Release triggers an inner nerve pulse; activation keeps the inner plate warm. Tabs and icon sockets also keep their frames fixed while their content depresses.
 - Slider rails and thumbs are separate generated images on native range inputs.
 - Switch housings and actuators are separate generated images. Actuators slide and rotate with a warm light when enabled.
 - A generated loading ring rotates during a six-second local neural sequence with actual start, cancel, completion and restart states. The progress channel uses the generated rail.

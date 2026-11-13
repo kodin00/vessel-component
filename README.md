@@ -22,7 +22,7 @@ Open http://localhost:4173. All interactions run locally in the browser. Google 
 - Search specimens, change chambers, and expand information panels.
 - Enable optional synthesized ambient audio. Audio starts only after a click.
 - Reset the controls to their initial state.
-- Hold a command button to depress it. Hover lights its conduits amber; release pulses its generated pressed artwork.
+- Hold a command button to depress its inner plate and label. The generated outer frame stays fixed; amber hover and release responses are clipped to the center plate.
 - Run, cancel, and restart a six-second local neural sequence with an animated generated loading ring and a progress channel.
 - Try the generated cursor, its pressed state, and the expanding click artwork in the contact-response pad.
 - Check and uncheck containment seals.
