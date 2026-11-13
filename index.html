@@ -11,8 +11,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="mechanisms.css">
+  <link rel="stylesheet" href="round-button.css">
   <link rel="preload" href="assets/button-hover.webp" as="image">
   <link rel="preload" href="assets/button-pressed.webp" as="image">
+  <link rel="preload" href="assets/round-button-hover.webp" as="image">
+  <link rel="preload" href="assets/round-button-pressed.webp" as="image">
   <link rel="icon" href="assets/logo-skull.webp" type="image/webp">
   <script src="app.js" defer></script>
 </head>
@@ -76,6 +79,12 @@
           <button class="text-button reset-button" id="reset-button">↺ <span>Restore equilibrium</span></button>
           <div class="readout"><span class="readout-light"></span><span id="readout-text">ALL VITALS WITHIN RANGE</span></div>
         </aside>
+      </section>
+
+      <section class="round-showcase" id="round-buttons" aria-labelledby="round-button-heading">
+        <div class="round-intro"><span class="eyebrow">CIRCULAR COMMAND SURFACE</span><h2 id="round-button-heading">The vessel seal.</h2><p>Press the skull to awaken the vessel.<br>Press again to return it to stasis.</p></div>
+        <div class="round-primary"><button class="round-button" id="round-vessel-button" data-round-vessel="main" aria-label="Awaken vessel — circular seal" aria-pressed="false" aria-describedby="round-button-state"><img class="round-button__emblem" src="assets/logo-skull.webp" alt="" draggable="false"></button><output id="round-button-state">IN STASIS</output></div>
+        <div class="round-sizes"><div><button class="round-button round-button--compact" data-round-vessel="compact" aria-label="Awaken vessel — compact seal" aria-pressed="false"><img class="round-button__emblem" src="assets/logo-skull.webp" alt="" draggable="false"></button><span>COMPACT / 88</span></div><div><button class="round-button round-button--micro" data-round-vessel="micro" aria-label="Awaken vessel — micro seal" aria-pressed="false"><img class="round-button__emblem" src="assets/logo-skull.webp" alt="" draggable="false"></button><span>MICRO / 56</span></div></div>
       </section>
 
       <section class="component-section" id="components" aria-labelledby="component-heading">
