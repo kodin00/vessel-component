@@ -201,7 +201,7 @@ function startSequence() {
     sequencePanel.classList.add('sequence-complete');
     sequencePanel.setAttribute('aria-busy', 'false');
     $('#sequence-button').disabled = false;
-    $('#sequence-button').textContent = 'Run again';
+    $('#sequence-button .button-face').textContent = 'Run again';
     $('#cancel-sequence').disabled = true;
     $('#sequence-state').textContent = 'Synchronization complete';
     $('#sequence-description').textContent = 'Every nerve is in alignment.';
@@ -216,7 +216,7 @@ function stopSequence(reset = false) {
   sequencePanel.classList.remove('sequence-running', 'sequence-complete');
   sequencePanel.setAttribute('aria-busy', 'false');
   $('#sequence-button').disabled = false;
-  $('#sequence-button').textContent = 'Initiate sequence';
+  $('#sequence-button .button-face').textContent = 'Initiate sequence';
   $('#cancel-sequence').disabled = true;
   $('#sequence-state').textContent = reset ? 'In suspended animation' : 'Sequence interrupted';
   $('#sequence-description').textContent = reset ? 'Set the organism in motion.' : 'Ready when you are.';
@@ -243,6 +243,13 @@ $('#auto-reconnect').addEventListener('change', (event) => {
 });
 
 // Generated hover/pressed artwork swaps in place; motion conveys physical travel.
+// Keep generated frames on the button itself and move only their inner content.
+$$('.small-artifact, [role=tab], .icon-socket').forEach((button) => {
+  [...button.childNodes].filter((node) => node.nodeType === Node.TEXT_NODE && node.textContent.trim()).forEach((node) => {
+    const face = document.createElement('span'); face.className = 'button-face'; face.textContent = node.textContent;
+    node.replaceWith(face);
+  });
+});
 $$('.artifact-button:not(:disabled), .small-artifact, [role=tab], .icon-socket').forEach((button) => {
   let releaseTimer;
   const press = () => { if (!button.disabled) { clearTimeout(releaseTimer); button.classList.remove('button-fired'); button.classList.add('is-depressed'); } };
