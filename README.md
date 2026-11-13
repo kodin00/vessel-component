@@ -5,11 +5,21 @@ An interactive biomechanical interface lab built with vanilla HTML, CSS, and Jav
 ## Run locally
 
 ```sh
-cd /Users/kodin/Documents/selfproj/giger/vessel
+cd vessel-component
 python3 -m http.server 4173 --directory dist
 ```
 
 Open http://localhost:4173. All interactions run locally in the browser. Google Fonts supplies Cormorant Garamond, with Georgia as the offline fallback.
+
+## GitHub Pages
+
+The public demo is published from the `gh-pages` branch, which contains the contents of `dist/` at its root. To publish updates after committing changes on `master`, run:
+
+```sh
+git subtree split --prefix dist -b pages-release
+git push origin pages-release:gh-pages
+git branch -d pages-release
+```
 
 ## Interactions
 
