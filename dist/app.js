@@ -65,6 +65,7 @@ function openDialog(kind) {
 
 $('#awaken-button').addEventListener('click', () => {
   awake = !awake;
+  syncRoundButtons();
   $('#awaken-button').setAttribute('aria-pressed', String(awake));
   viewer.classList.toggle('awakened', awake);
   $('#awaken-button span').textContent = awake ? 'Return to stasis' : 'Awaken vessel';
@@ -117,6 +118,7 @@ $('#reset-button').addEventListener('click', () => {
   $('#breathing').checked = true; $('#scan').checked = false;
   viewer.classList.remove('no-motion', 'scanning', 'awakened');
   awake = false; $('#awaken-button span').textContent = 'Awaken vessel';
+  syncRoundButtons();
   $('#awaken-button').setAttribute('aria-pressed', 'false');
   $('#vessel-state').textContent = 'AWAITING CONTACT'; $('#view-coordinates').textContent = 'X 048 · Y 092';
   $('#readout-text').textContent = 'ALL VITALS WITHIN RANGE';
@@ -250,7 +252,7 @@ $$('.small-artifact, [role=tab], .icon-socket').forEach((button) => {
     node.replaceWith(face);
   });
 });
-$$('.artifact-button:not(:disabled), .small-artifact, [role=tab], .icon-socket').forEach((button) => {
+$$('.artifact-button:not(:disabled), .round-button, .small-artifact, [role=tab], .icon-socket').forEach((button) => {
   let releaseTimer;
   const press = () => { if (!button.disabled) { clearTimeout(releaseTimer); button.classList.remove('button-fired'); button.classList.add('is-depressed'); } };
   const release = () => { button.classList.remove('is-depressed'); };
@@ -267,6 +269,15 @@ $$('.artifact-button:not(:disabled), .small-artifact, [role=tab], .icon-socket')
     releaseTimer = setTimeout(() => button.classList.remove('button-fired'), 700);
   });
 });
+
+function syncRoundButtons() {
+  $$('[data-round-vessel]').forEach((button) => {
+    button.setAttribute('aria-pressed', String(awake));
+    button.setAttribute('aria-label', `${awake ? 'Return vessel to stasis' : 'Awaken vessel'} — ${button.dataset.roundVessel === 'main' ? 'circular' : button.dataset.roundVessel} seal`);
+  });
+  $('#round-button-state').textContent = awake ? 'VESSEL AWAKE' : 'IN STASIS';
+}
+$$('[data-round-vessel]').forEach((button) => button.addEventListener('click', () => $('#awaken-button').click()));
 
 // A generated cursor sprite follows real pointer input. Coarse pointers retain native behavior.
 const cursor = $('#living-cursor');

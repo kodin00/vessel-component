@@ -1,6 +1,6 @@
 # Vessel
 
-An interactive biomechanical interface lab built with vanilla HTML, CSS, and JavaScript. Twenty-four original generated artworks supply the buttons and interaction states, frames, sliders, switches, spinner, cursor, click effects, inputs, tabs, icons, seals, and environment. There is no framework or runtime build dependency.
+An interactive biomechanical interface lab built with vanilla HTML, CSS, and JavaScript. Twenty-seven original generated artworks supply the buttons and interaction states, frames, sliders, switches, spinner, cursor, click effects, inputs, tabs, icons, seals, and environment. There is no framework or runtime build dependency.
 
 ## Run locally
 
@@ -26,6 +26,7 @@ Open http://localhost:4173. All interactions run locally in the browser. Google 
 - Run, cancel, and restart a six-second local neural sequence with an animated generated loading ring and a progress channel.
 - Try the generated cursor, its pressed state, and the expanding click artwork in the contact-response pad.
 - Check and uncheck containment seals.
+- Try the circular skull seal in standard, compact, and micro sizes. All three toggle the vessel together; the generated outer ring remains stationary while only the inner plate and skull depress.
 
 Generated asset paths and the exact production prompts are in [docs/art-direction.md](docs/art-direction.md).
 
@@ -34,3 +35,5 @@ The expanded 21-asset prompt set and interaction details are in [docs/expanded-a
 ```sh
 uv run --with pillow python scripts/prepare-assets.py
 ```
+
+The circular button uses `dist/round-button.css`, three generated `round-button*.png` assets (with WebP derivatives), and the existing `logo-skull.webp` emblem. Replace the emblem image source to use another logo. See [docs/round-button.md](docs/round-button.md) for the exact generation prompts and behavior.

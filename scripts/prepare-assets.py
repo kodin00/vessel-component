@@ -16,6 +16,7 @@ compact_sizes = {
     'button': 1024, 'button-hover': 1024, 'button-pressed': 1024,
     'input-frame': 1280, 'tab-plate': 640, 'slider-rail': 1024,
     'switch-housing': 384, 'divider-spine': 1200,
+    'round-button': 512, 'round-button-hover': 512, 'round-button-pressed': 512,
 }
 for source in sorted(assets.glob('*.png')):
     target = source.with_suffix('.webp')
