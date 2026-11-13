@@ -16,9 +16,7 @@ Open http://localhost:4173. All interactions run locally in the browser. Google 
 The public demo is published from the `gh-pages` branch, which contains the contents of `dist/` at its root. To publish updates after committing changes on `master`, run:
 
 ```sh
-git subtree split --prefix dist -b pages-release
-git push origin pages-release:gh-pages
-git branch -d pages-release
+git subtree split --prefix dist | xargs -I {} git push origin {}:refs/heads/gh-pages
 ```
 
 ## Interactions
