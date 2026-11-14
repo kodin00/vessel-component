@@ -13,11 +13,7 @@ Open http://localhost:4173. All interactions run locally in the browser. Google 
 
 ## GitHub Pages
 
-The public demo is published from the `gh-pages` branch, which contains the contents of `dist/` at its root. To publish updates after committing changes on `master`, run:
-
-```sh
-git subtree split --prefix dist | xargs -I {} git push origin {}:refs/heads/gh-pages
-```
+GitHub Actions publishes the contents of `dist/` to GitHub Pages automatically on every push to `master`. The workflow can also be run manually from the Actions tab.
 
 ## Interactions
 
