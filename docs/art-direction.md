@@ -26,3 +26,21 @@ File: `dist/assets/scene.png`
 
 Use case: stylized-concept. Asset type: immersive artwork inside an interactive biomechanical website specimen viewer. Landscape 3:2 composition. An immense H. R. Giger inspired biomechanical cathedral, a central monolithic elongated alien skull fused with dark skeletal architecture, symmetrical towers constructed from vertebrae, ribs, arched tubular conduits and metal tendon fibers. In the foreground a single small circular pale ivory energy aperture sits inside a ribbed organic console. Vast, haunting, beautiful, hyperdetailed fine airbrush texture, misty deep gray monumental architecture receding into the background. Strictly monochrome black, aged pewter, silver and bone ivory palette, high quality deep blacks and subtle midtones and carefully lit silver edges, not too dim. The central skull sculpture occupies the right half of the composition; left quarter is shadowed architecture useful for text overlay. Cinematic art photograph, optical depth, not cartoon, no people, no text, no typography, no borders, no UI, no watermark.
 
+
+### watching-wall
+
+File: `dist/assets/watching-wall.png`
+
+Built-in image generation. Prompt: Create an original dark biomechanical surrealist widescreen website wallpaper: a close-up wall of aged ivory bone and fused skeletal plates, with deep irregular cracks revealing dark red fleshy tissue. In one lower corner, a larger broken opening exposes an enormous detailed organic eye staring directly at the viewer. Intricate anatomical textures, alien industrial atmosphere, muted charcoal, tarnished bone and deep maroon, dramatic low-key lighting. No typography, logos, or border.
+
+### hungry-wall
+
+File: `dist/assets/hungry-wall.png`
+
+Built-in image generation. Prompt: A landscape dark biomechanical wallpaper with a mostly smooth aged ivory bone wall, a few fine cracks, and an enormous exposed, lidless monstrous eyeball in one corner. The tiny constricted pupil stares directly at the viewer; dark fleshy tissue surrounds the opening. Sculptural organic textures, muted bone, charcoal and deep maroon, ominous low-key lighting. No text, logos, or border.
+
+### socket-wall
+
+File: `dist/assets/socket-wall.png`
+
+Built-in image generation. Prompt: A smooth, lightly cracked bone wall with a huge lidless monstrous eye and tiny constricted pupil in the upper right. Seat the eye deep inside a continuous bony orbital socket, enclosed by a thick sculpted rim and joined to it with fleshy connective tissue. Original biomechanical surrealism, muted bone, charcoal and deep maroon, ominous low-key lighting. Widescreen, no words, logos, or border.
